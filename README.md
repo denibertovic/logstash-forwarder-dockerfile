@@ -26,7 +26,7 @@ Run
 
 Test it:
 
-    docker run -volumes-from forwarder -i -t ubuntu /bin/bash -c "echo 'test' > /tmp/feeds/fifofeed"
+    docker run -volumes-from forwarder -i -t ubuntu /bin/bash -c "echo 'test' >> /tmp/feeds/fifofeed"
     # Go to logstash/kibana web interface on port 9292 and confirm that the messages got through
 
 A couple of things to note:
