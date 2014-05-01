@@ -22,7 +22,7 @@ Build
 
 Run
     
-    docker run -name forwarder -d -v /tmp/feeds -e LOGSTASH_SERVER="1.2.3.4:5043" -t forwarder
+    docker run --name forwarder -d -v /tmp/feeds -e LOGSTASH_SERVER="1.2.3.4:5043" -t forwarder
 
 Test it:
 
