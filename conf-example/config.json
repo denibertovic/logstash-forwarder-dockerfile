@@ -1,9 +1,6 @@
-#!/bin/bash
-
-cat << EOF > /tmp/config.json
 {
   "network": {
-    "servers": [ "$LOGSTASH_SERVER" ],
+    "servers": [ "logstash:5043" ],
     "ssl certificate": "/opt/certs/logstash-forwarder.crt",
     "ssl key": "/opt/certs/logstash-forwarder.key",
     "ssl ca": "/opt/certs/logstash-forwarder.crt",
@@ -11,11 +8,8 @@ cat << EOF > /tmp/config.json
   },
   "files": [
     {
-      "paths": [ "/tmp/feeds/fifofeed" ],
+      "paths": [ "/tmp/test/test.log" ],
       "fields": { "type": "stdin" }
     }
   ]
 }
-EOF
-
-/opt/logstash-forwarder/bin/logstash-forwarder -config /tmp/config.json
