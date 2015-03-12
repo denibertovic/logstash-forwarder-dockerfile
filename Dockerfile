@@ -25,5 +25,7 @@ RUN chmod 755 /usr/local/bin/start_forwarder.sh
 
 RUN rm -rf /tmp/*
 
+VOLUME ["/opt/conf", "/opt/certs"]
+
 CMD /usr/local/bin/start_forwarder.sh
 
