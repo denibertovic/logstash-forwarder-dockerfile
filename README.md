@@ -14,9 +14,18 @@ Pull
 
     docker pull denibertovic/logstash-forwarder
 
-Run
+Run and test
 
-    docker run --name forwarder -d -v `pwd`/conf-example:/opt/conf -v `pwd`/certs:/opt/certs -t denibertovic/logstash-forwarder
+    mkdir /tmp/test && touch /tmp/test/test.log
+    docker run --name forwarder -d -v /tmp/test:/tmp/test -v `pwd`/conf-example:/opt/conf -v `pwd`/certs:/opt/certs -t denibertovic/logstash-forwarder
+
+    cat >> /tmp/test/test.log
+    test
+    test
+    test
+    ^C
+
+    Log in to the Kibana interface, you should see the logs 3 test messages there.
 
 Volumes:
 
